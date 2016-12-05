@@ -30,13 +30,14 @@ static std::vector<std::pair<std::string, Device::BuiltinAction>> g_menu_actions
   { "Reboot to bootloader", Device::REBOOT_BOOTLOADER },
   { "Enter fastboot", Device::ENTER_FASTBOOT },
   { "Apply update from ADB", Device::APPLY_ADB_SIDELOAD },
-  { "Apply update from SD card", Device::APPLY_SDCARD },
+#ifdef DEBUG_BUILD
   { "Wipe data/factory reset", Device::WIPE_DATA },
   { "Wipe cache partition", Device::WIPE_CACHE },
   { "Mount /system", Device::MOUNT_SYSTEM },
   { "View recovery logs", Device::VIEW_RECOVERY_LOGS },
   { "Run graphics test", Device::RUN_GRAPHICS_TEST },
   { "Run locale test", Device::RUN_LOCALE_TEST },
+#endif
   { "Enter rescue", Device::ENTER_RESCUE },
   { "Power off", Device::SHUTDOWN },
 };

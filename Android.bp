@@ -24,6 +24,12 @@ cc_defaults {
         "-Wall",
         "-Werror",
     ],
+
+    product_variables: {
+        debuggable: {
+            cflags: ["-DDEBUG_BUILD"],
+        },
+    },
 }
 
 cc_library_static {
