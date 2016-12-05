@@ -194,6 +194,10 @@ ifeq ($(AB_OTA_UPDATER),true)
     LOCAL_CFLAGS += -DAB_OTA_UPDATER=1
 endif
 
+ifneq (,$(filter userdebug eng, $(TARGET_BUILD_VARIANT)))
+    LOCAL_CFLAGS += -DDEBUG_BUILD
+endif
+
 LOCAL_MODULE_PATH := $(TARGET_RECOVERY_ROOT_OUT)/sbin
 
 ifeq ($(TARGET_RECOVERY_UI_LIB),)
